@@ -22,11 +22,12 @@ import Example from './3-11.Portal/Example';
 import Component from './3-14.PropTypes/Component';
 import StyledComponentExample from './Components/StyledComponentExample';
 import Container from './Ch3.Practice/Container';
+import DayjsExample from './Components/DateFns/DateFnsExample';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
-        <Example />
+        <DayjsExample />
     </>
 );
 
