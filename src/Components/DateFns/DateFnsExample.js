@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useRef } from 'react';
 import {add , format, sub, differenceInHours} from 'date-fns';
+import { format as timezoneFormat, toDate } from 'date-fns-tz';
 import addWeeks from 'date-fns/addWeeks';
 import {ko} from 'date-fns/locale'
 
@@ -28,25 +29,29 @@ export default function DayjsExample() {
                 {format(newDateFnsDate2, "yyyy-MM-dd")}
             </div>
             <br/>
-            {/* <div>Summer Time (New_York)</div>
-            <div>{dayjs.tz.guess()}</div>
+            <div>Summer Time (New-York)</div>
             <div>
-                2018년 3월 10일 24시간 더하기:
-                {dayjs
-                    .tz("2018-03-10 13:00:00", "America/New_York")
-                    .add(24,"hour")
-                    .format()
-                }
-            </div> */}
+                2018년 3월 10일 13시에 하루 더하기:
+                {timezoneFormat(
+                    add(new Date("2018-03-10 13:00:00"), { days: 1 }),
+                        "yyyy-MM-dd HH:mm:ss:ssXXX", 
+                        {
+                            timezone: "America/New_York",
+                        }
+                )}
+            </div>
             <br/>
-            {/* <div>
-                2018년 3월 10일 하루 더하기:
-                {dayjs
-                    .tz("2018-03-10 13:00:00", "America/New_York")
-                    .add(1,"day")
-                    .format()
-                }
-            </div> */}
+            <div>
+                2018년 3월 10일 13시에 24시간 더하기:
+                {timezoneFormat(
+                    add(
+                        new Date("2018-03-10 13:00:00"), { hours: 24 }),
+                        "yyyy-MM-dd HH:mm:ss:ssXXX", 
+                        {
+                            timezone: "America/New_York",
+                        }
+                )}
+            </div>
             <br/>
         
             <div>Leap year (korea)</div>
