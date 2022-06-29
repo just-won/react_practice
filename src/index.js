@@ -23,11 +23,12 @@ import Component from './3-14.PropTypes/Component';
 import StyledComponentExample from './Components/StyledComponentExample';
 import Container from './Ch3.Practice/Container';
 import DayjsExample from './Components/DateFns/DateFnsExample';
+import TabExample from './Components/OnsenUI/TabExample';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
-        <DayjsExample />
+        <App />
     </>
 );
 
