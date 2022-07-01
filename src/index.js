@@ -25,6 +25,8 @@ import Container from './Ch3.Practice/Container';
 import DayjsExample from './Components/DateFns/DateFnsExample';
 import TabExample from './Components/OnsenUI/TabExample';
 
+import 'semantic-ui-css/semantic.min.css'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
